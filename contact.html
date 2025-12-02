@@ -85,7 +85,10 @@ description: Contact Kings Heating and Air for HVAC services in Sacramento. Call
           <h2 class="text-2xl font-bold text-slate-900 mb-2">Send Us a Message</h2>
           <p class="text-slate-600 mb-8">Fill out the form below and we'll get back to you as soon as possible.</p>
 
-          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
+          <form action="https://formsubmit.co/aehvac_inc@yahoo.com" method="POST" class="space-y-6">
+            <input type="hidden" name="_subject" value="New inquiry from Kings Heating & Air website">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="_next" value="{{ site.url }}{{ site.baseurl }}/contact?submitted=true">
             <div class="grid sm:grid-cols-2 gap-6">
               <div>
                 <label for="name" class="block text-sm font-medium text-slate-700 mb-2">Name</label>
