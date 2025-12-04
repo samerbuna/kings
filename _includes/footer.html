@@ -49,8 +49,8 @@
       <div>
         <h3 class="text-lg font-semibold mb-6">Service Areas</h3>
         <ul class="space-y-3">
-          {% for area in site.service_areas %}
-          <li class="text-slate-400">{{ area }}, CA</li>
+          {% for location in site.locations %}
+          <li><a href="{{ location.url | relative_url }}" class="text-slate-400 hover:text-white transition-colors">{{ location.city }}, CA</a></li>
           {% endfor %}
         </ul>
       </div>

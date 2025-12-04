@@ -1,9 +1,10 @@
 title: Kings Heating and Air
 description: Professional HVAC services in Sacramento, Elk Grove, Galt, Lodi, and Roseville, CA
-url: "https://samerbuna.github.io"
-baseurl: "/kings"
+url: "https://kingsheatingandair.net"
+baseurl: ""
 
 phone: "(916) 398-6999"
+phone_raw: "+19163986999"
 email: "aehvac_inc@yahoo.com"
 location: "Sacramento, CA"
 
@@ -13,6 +14,19 @@ service_areas:
   - Galt
   - Lodi
   - Roseville
+
+# Social/SEO
+og_image: /assets/images/og-image.jpg
+twitter_handle: ""
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+collections:
+  locations:
+    output: true
+    permalink: /:slug/
 
 exclude:
   - README.md

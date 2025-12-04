@@ -1,0 +1,256 @@
+---
+layout: default
+---
+
+<!-- Hero -->
+<section class="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <div class="inline-flex items-center gap-2 bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-sm font-medium mb-6">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        Serving {{ page.city }}, CA
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-extrabold mb-6">{{ page.headline }}</h1>
+      <p class="text-xl text-slate-300 mb-8">
+        {{ page.intro }}
+      </p>
+      <a href="tel:{{ site.phone_raw }}" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+        </svg>
+        Call {{ site.phone }}
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us for This Location -->
+<section class="py-16 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-slate-900 mb-4 text-center">Why {{ page.city }} Homeowners Choose Us</h2>
+    <p class="text-lg text-slate-600 text-center max-w-3xl mx-auto mb-12">{{ page.why_choose }}</p>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-2xl shadow-sm">
+        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-2">Fast Response Time</h3>
+        <p class="text-slate-600">We're local to {{ page.city }} and can respond quickly to service calls throughout the area.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-sm">
+        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-2">Licensed & Insured</h3>
+        <p class="text-slate-600">Fully licensed HVAC contractors with comprehensive insurance for your peace of mind.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-sm">
+        <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-2">Transparent Pricing</h3>
+        <p class="text-slate-600">Upfront quotes with no hidden fees. We explain costs before any work begins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-slate-900 mb-4 text-center">HVAC Services in {{ page.city }}</h2>
+    <p class="text-lg text-slate-600 text-center max-w-3xl mx-auto mb-12">
+      Complete heating and cooling solutions for {{ page.city }} homes and businesses.
+    </p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Heating & AC -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+        <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-slate-900 mb-2">Heating & Air Conditioning</h3>
+        <p class="text-slate-600 mb-4">Expert repair, maintenance, and service for all HVAC systems in {{ page.city }}.</p>
+        <ul class="text-sm text-slate-600 space-y-1">
+          <li>• AC repair & maintenance</li>
+          <li>• Furnace repair & tune-ups</li>
+          <li>• Heat pump services</li>
+          <li>• Emergency repairs</li>
+        </ul>
+      </div>
+
+      <!-- Duct Replacement -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+        <div class="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-slate-900 mb-2">Duct Replacement</h3>
+        <p class="text-slate-600 mb-4">Improve efficiency and air quality with professional duct services.</p>
+        <ul class="text-sm text-slate-600 space-y-1">
+          <li>• Duct inspection & repair</li>
+          <li>• Complete duct replacement</li>
+          <li>• Duct sealing</li>
+          <li>• Airflow optimization</li>
+        </ul>
+      </div>
+
+      <!-- Indoor Air Quality -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-slate-900 mb-2">Indoor Air Quality</h3>
+        <p class="text-slate-600 mb-4">Breathe easier with our air quality solutions for {{ page.city }} homes.</p>
+        <ul class="text-sm text-slate-600 space-y-1">
+          <li>• Air filtration systems</li>
+          <li>• UV air purifiers</li>
+          <li>• Humidity control</li>
+          <li>• Ventilation solutions</li>
+        </ul>
+      </div>
+
+      <!-- HVAC Installation -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-slate-900 mb-2">HVAC Installation</h3>
+        <p class="text-slate-600 mb-4">New system installation and replacement for {{ page.city }} properties.</p>
+        <ul class="text-sm text-slate-600 space-y-1">
+          <li>• Central AC installation</li>
+          <li>• Furnace installation</li>
+          <li>• Heat pump systems</li>
+          <li>• Mini-split systems</li>
+        </ul>
+      </div>
+
+      <!-- Water Heater -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+        <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-slate-900 mb-2">Water Heater Services</h3>
+        <p class="text-slate-600 mb-4">Tank and tankless water heater solutions for {{ page.city }} homes.</p>
+        <ul class="text-sm text-slate-600 space-y-1">
+          <li>• Water heater installation</li>
+          <li>• Tankless conversions</li>
+          <li>• Repairs & maintenance</li>
+          <li>• Emergency service</li>
+        </ul>
+      </div>
+
+      <!-- Emergency Service -->
+      <div class="bg-blue-600 text-white rounded-2xl p-6">
+        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Emergency HVAC Service</h3>
+        <p class="text-blue-100 mb-4">{{ page.city }} emergency heating and cooling repairs when you need them most.</p>
+        <a href="tel:{{ site.phone_raw }}" class="inline-flex items-center gap-2 bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+          </svg>
+          Call Now
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Areas We Serve -->
+{% if page.neighborhoods %}
+<section class="py-16 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">{{ page.city }} Areas We Serve</h2>
+    <div class="flex flex-wrap justify-center gap-3">
+      {% for area in page.neighborhoods %}
+      <span class="bg-white px-4 py-2 rounded-full text-slate-700 border border-slate-200">{{ area }}</span>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- CTA -->
+<section class="bg-blue-600 py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-bold text-white mb-4">Need HVAC Service in {{ page.city }}?</h2>
+    <p class="text-xl text-blue-100 mb-8">Contact us today for a free estimate. We're ready to help!</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="tel:{{ site.phone_raw }}" class="inline-flex items-center justify-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-50 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+        </svg>
+        {{ site.phone }}
+      </a>
+      <a href="/contact/" class="inline-flex items-center justify-center gap-3 bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-800 transition-colors">
+        Request a Quote
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Location-specific JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HVACBusiness",
+  "name": "{{ site.title }} - {{ page.city }}",
+  "description": "{{ page.description }}",
+  "url": "{{ page.url | absolute_url }}",
+  "telephone": "{{ site.phone_raw }}",
+  "email": "{{ site.email }}",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "{{ page.city }}",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "{{ page.lat }}",
+    "longitude": "{{ page.lng }}"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "{{ page.city }}",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  },
+  "serviceType": [
+    "Heating Services",
+    "Air Conditioning Services",
+    "HVAC Installation",
+    "HVAC Repair",
+    "Duct Replacement",
+    "Indoor Air Quality",
+    "Water Heater Services"
+  ],
+  "priceRange": "$$"
+}
+</script>

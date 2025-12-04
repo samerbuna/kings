@@ -159,14 +159,14 @@ description: Kings Heating and Air provides expert HVAC services including heati
         <h3 class="text-2xl font-bold mb-6">Service Areas</h3>
         <p class="text-slate-400 mb-8">We proudly serve these Northern California communities:</p>
         <div class="grid grid-cols-2 gap-4 mb-10">
-          {% for area in site.service_areas %}
-          <div class="flex items-center gap-3">
+          {% for location in site.locations %}
+          <a href="{{ location.url | relative_url }}" class="flex items-center gap-3 hover:text-blue-400 transition-colors">
             <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
             </svg>
-            <span>{{ area }}, CA</span>
-          </div>
+            <span>{{ location.city }}, CA</span>
+          </a>
           {% endfor %}
         </div>
         <a href="{{ '/contact' | relative_url }}" class="inline-flex items-center justify-center gap-2 w-full bg-blue-600 hover:bg-blue-500 text-white px-6 py-4 rounded-xl font-semibold transition-colors">
@@ -176,6 +176,146 @@ description: Kings Heating and Air provides expert HVAC services including heati
           </svg>
         </a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Service Area Map -->
+<section class="py-20 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Our Service Area</h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Kings Heating and Air proudly serves Sacramento and the surrounding communities. Click on a location to learn more about our services in your area.
+      </p>
+    </div>
+    <div class="grid lg:grid-cols-3 gap-8">
+      <!-- Map -->
+      <div class="lg:col-span-2 bg-white rounded-2xl shadow-sm overflow-hidden">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d398940.5735657803!2d-121.67432584843748!3d38.41664589999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA!5e0!3m2!1sen!2sus!4v1701234567890!5m2!1sen!2sus"
+          width="100%"
+          height="400"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Kings Heating and Air Service Area Map"
+          class="w-full">
+        </iframe>
+      </div>
+      <!-- Location Links -->
+      <div class="bg-white rounded-2xl shadow-sm p-8">
+        <h3 class="text-xl font-bold text-slate-900 mb-6">Service Locations</h3>
+        <div class="space-y-4">
+          {% for location in site.locations %}
+          <a href="{{ location.url | relative_url }}" class="flex items-center justify-between p-4 bg-slate-50 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition-colors group">
+            <div class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <span class="font-medium">{{ location.city }}, CA</span>
+            </div>
+            <svg class="w-5 h-5 text-slate-400 group-hover:text-blue-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-20">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+      <p class="text-lg text-slate-600">
+        Common questions about HVAC services in Sacramento and surrounding areas.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      <!-- FAQ 1 -->
+      <details class="group bg-white rounded-2xl shadow-sm">
+        <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+          <h3 class="text-lg font-semibold text-slate-900 pr-4">How often should I have my HVAC system serviced?</h3>
+          <svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <div class="px-6 pb-6 text-slate-600">
+          <p>We recommend having your HVAC system serviced at least twice a year—once in spring before cooling season and once in fall before heating season. Regular maintenance helps prevent breakdowns, improves efficiency, and extends the life of your system. In Sacramento's climate with hot summers and cool winters, this bi-annual schedule ensures your system is ready for peak demand.</p>
+        </div>
+      </details>
+
+      <!-- FAQ 2 -->
+      <details class="group bg-white rounded-2xl shadow-sm">
+        <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+          <h3 class="text-lg font-semibold text-slate-900 pr-4">What are signs that my AC needs repair?</h3>
+          <svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <div class="px-6 pb-6 text-slate-600">
+          <p>Common signs your AC needs repair include: warm air blowing from vents, weak airflow, unusual noises (grinding, squealing, or banging), frequent cycling on and off, high humidity indoors, water leaks around the unit, and unexplained increases in your energy bills. If you notice any of these issues, it's best to call for service before a small problem becomes a major repair.</p>
+        </div>
+      </details>
+
+      <!-- FAQ 3 -->
+      <details class="group bg-white rounded-2xl shadow-sm">
+        <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+          <h3 class="text-lg font-semibold text-slate-900 pr-4">How long does a typical HVAC system last?</h3>
+          <svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <div class="px-6 pb-6 text-slate-600">
+          <p>With proper maintenance, a central air conditioner typically lasts 15-20 years, while furnaces can last 15-30 years. Heat pumps usually last about 15 years. Factors that affect lifespan include installation quality, maintenance frequency, usage patterns, and local climate conditions. If your system is approaching these ages and requiring frequent repairs, it may be more cost-effective to replace it with a new, energy-efficient model.</p>
+        </div>
+      </details>
+
+      <!-- FAQ 4 -->
+      <details class="group bg-white rounded-2xl shadow-sm">
+        <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+          <h3 class="text-lg font-semibold text-slate-900 pr-4">Do you offer emergency HVAC services?</h3>
+          <svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <div class="px-6 pb-6 text-slate-600">
+          <p>Yes! We understand that HVAC emergencies don't always happen during business hours. We offer emergency repair services throughout Sacramento, Elk Grove, Roseville, Galt, and Lodi. When your heating fails on a cold night or your AC breaks down during a heat wave, call us and we'll dispatch a technician to restore your comfort as quickly as possible.</p>
+        </div>
+      </details>
+
+      <!-- FAQ 5 -->
+      <details class="group bg-white rounded-2xl shadow-sm">
+        <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+          <h3 class="text-lg font-semibold text-slate-900 pr-4">What areas do you serve?</h3>
+          <svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <div class="px-6 pb-6 text-slate-600">
+          <p>Kings Heating and Air serves Sacramento and the surrounding communities including Elk Grove, Roseville, Galt, Lodi, and their neighboring areas. Whether you're in downtown Sacramento, the suburbs, or nearby cities, our experienced technicians can help with all your heating and cooling needs. Contact us to confirm service availability in your specific location.</p>
+        </div>
+      </details>
+
+      <!-- FAQ 6 -->
+      <details class="group bg-white rounded-2xl shadow-sm">
+        <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+          <h3 class="text-lg font-semibold text-slate-900 pr-4">How can I improve my home's indoor air quality?</h3>
+          <svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <div class="px-6 pb-6 text-slate-600">
+          <p>There are several ways to improve indoor air quality: upgrade to high-efficiency air filters (MERV 11 or higher), install a whole-home air purification system, add UV lights to kill bacteria and mold, use a dehumidifier or humidifier to maintain proper humidity levels, ensure proper ventilation, and schedule regular duct cleaning. We can assess your home and recommend the best solutions for your specific needs and budget.</p>
+        </div>
+      </details>
     </div>
   </div>
 </section>
@@ -200,3 +340,61 @@ description: Kings Heating and Air provides expert HVAC services including heati
     </div>
   </div>
 </section>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How often should I have my HVAC system serviced?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We recommend having your HVAC system serviced at least twice a year—once in spring before cooling season and once in fall before heating season. Regular maintenance helps prevent breakdowns, improves efficiency, and extends the life of your system. In Sacramento's climate with hot summers and cool winters, this bi-annual schedule ensures your system is ready for peak demand."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are signs that my AC needs repair?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common signs your AC needs repair include: warm air blowing from vents, weak airflow, unusual noises (grinding, squealing, or banging), frequent cycling on and off, high humidity indoors, water leaks around the unit, and unexplained increases in your energy bills. If you notice any of these issues, it's best to call for service before a small problem becomes a major repair."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a typical HVAC system last?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With proper maintenance, a central air conditioner typically lasts 15-20 years, while furnaces can last 15-30 years. Heat pumps usually last about 15 years. Factors that affect lifespan include installation quality, maintenance frequency, usage patterns, and local climate conditions. If your system is approaching these ages and requiring frequent repairs, it may be more cost-effective to replace it with a new, energy-efficient model."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer emergency HVAC services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! We understand that HVAC emergencies don't always happen during business hours. We offer emergency repair services throughout Sacramento, Elk Grove, Roseville, Galt, and Lodi. When your heating fails on a cold night or your AC breaks down during a heat wave, call us and we'll dispatch a technician to restore your comfort as quickly as possible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas do you serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kings Heating and Air serves Sacramento and the surrounding communities including Elk Grove, Roseville, Galt, Lodi, and their neighboring areas. Whether you're in downtown Sacramento, the suburbs, or nearby cities, our experienced technicians can help with all your heating and cooling needs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I improve my home's indoor air quality?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There are several ways to improve indoor air quality: upgrade to high-efficiency air filters (MERV 11 or higher), install a whole-home air purification system, add UV lights to kill bacteria and mold, use a dehumidifier or humidifier to maintain proper humidity levels, ensure proper ventilation, and schedule regular duct cleaning. We can assess your home and recommend the best solutions for your specific needs and budget."
+      }
+    }
+  ]
+}
+</script>
