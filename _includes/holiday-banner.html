@@ -1,0 +1,126 @@
+{% assign today = site.time | date: "%m%d" | plus: 0 %}
+{% assign current_year = site.time | date: "%Y" %}
+{% assign next_year = current_year | plus: 1 %}
+
+{% assign show_banner = false %}
+{% assign banner_type = "" %}
+{% assign banner_message = "" %}
+{% assign banner_submessage = "" %}
+{% assign banner_icon = "" %}
+{% assign banner_bg = "" %}
+
+{% comment %} Christmas: Dec 15 - Dec 25 {% endcomment %}
+{% if today >= 1215 and today <= 1225 %}
+  {% assign show_banner = true %}
+  {% assign banner_type = "christmas" %}
+  {% assign banner_message = "Happy Holidays from Kings Heating & Air!" %}
+  {% assign banner_submessage = "Wishing you warmth and comfort this holiday season." %}
+  {% assign banner_icon = "christmas" %}
+  {% assign banner_bg = "from-red-600 to-green-700" %}
+{% endif %}
+
+{% comment %} New Year: Dec 26 - Jan 3 {% endcomment %}
+{% if today >= 1226 or today <= 103 %}
+  {% assign show_banner = true %}
+  {% assign banner_type = "newyear" %}
+  {% if today >= 1226 %}
+    {% assign banner_message = "Happy New Year " | append: next_year | append: "!" %}
+  {% else %}
+    {% assign banner_message = "Happy New Year " | append: current_year | append: "!" %}
+  {% endif %}
+  {% assign banner_submessage = "Start the year with a comfortable home. Schedule your HVAC tune-up today!" %}
+  {% assign banner_icon = "sparkle" %}
+  {% assign banner_bg = "from-blue-600 to-purple-700" %}
+{% endif %}
+
+{% comment %} Thanksgiving: Nov 20 - Nov 28 {% endcomment %}
+{% if today >= 1120 and today <= 1128 %}
+  {% assign show_banner = true %}
+  {% assign banner_type = "thanksgiving" %}
+  {% assign banner_message = "Happy Thanksgiving!" %}
+  {% assign banner_submessage = "We're grateful for customers like you. Stay warm this holiday!" %}
+  {% assign banner_icon = "heart" %}
+  {% assign banner_bg = "from-orange-600 to-amber-700" %}
+{% endif %}
+
+{% comment %} 4th of July: Jul 1 - Jul 5 {% endcomment %}
+{% if today >= 701 and today <= 705 %}
+  {% assign show_banner = true %}
+  {% assign banner_type = "july4th" %}
+  {% assign banner_message = "Happy 4th of July!" %}
+  {% assign banner_submessage = "Stay cool this Independence Day. We're here if you need us!" %}
+  {% assign banner_icon = "star" %}
+  {% assign banner_bg = "from-blue-700 to-red-600" %}
+{% endif %}
+
+{% if show_banner %}
+<div id="holiday-banner" class="bg-gradient-to-r {{ banner_bg }} text-white py-3 px-4 relative">
+  <div class="max-w-7xl mx-auto flex items-center justify-center gap-3 text-center">
+    {% if banner_icon == "christmas" %}
+    <span class="text-2xl" aria-hidden="true">🎄</span>
+    {% elsif banner_icon == "sparkle" %}
+    <span class="text-2xl" aria-hidden="true">✨</span>
+    {% elsif banner_icon == "heart" %}
+    <span class="text-2xl" aria-hidden="true">🧡</span>
+    {% elsif banner_icon == "star" %}
+    <span class="text-2xl" aria-hidden="true">🎆</span>
+    {% endif %}
+    <div>
+      <span class="font-semibold">{{ banner_message }}</span>
+      <span class="hidden sm:inline text-white/90 ml-2">{{ banner_submessage }}</span>
+    </div>
+    {% if banner_icon == "christmas" %}
+    <span class="text-2xl hidden sm:inline" aria-hidden="true">🎄</span>
+    {% elsif banner_icon == "sparkle" %}
+    <span class="text-2xl hidden sm:inline" aria-hidden="true">🎊</span>
+    {% elsif banner_icon == "heart" %}
+    <span class="text-2xl hidden sm:inline" aria-hidden="true">🍂</span>
+    {% elsif banner_icon == "star" %}
+    <span class="text-2xl hidden sm:inline" aria-hidden="true">🇺🇸</span>
+    {% endif %}
+  </div>
+  <button
+    onclick="document.getElementById('holiday-banner').style.display='none'"
+    class="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors"
+    aria-label="Dismiss banner">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+    </svg>
+  </button>
+</div>
+
+{% comment %} Snow effect for Christmas/New Year {% endcomment %}
+{% if banner_type == "christmas" or banner_type == "newyear" %}
+<style>
+  .snowflake {
+    position: fixed;
+    top: -10px;
+    z-index: 9999;
+    pointer-events: none;
+    animation: snowfall linear infinite;
+    opacity: 0.7;
+  }
+  @keyframes snowfall {
+    0% { transform: translateY(-10px) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+  }
+</style>
+<div id="snow-container" aria-hidden="true"></div>
+<script>
+  (function() {
+    const container = document.getElementById('snow-container');
+    const snowflakes = ['❄', '❅', '❆', '•'];
+    for (let i = 0; i < 20; i++) {
+      const el = document.createElement('div');
+      el.className = 'snowflake';
+      el.textContent = snowflakes[Math.floor(Math.random() * snowflakes.length)];
+      el.style.left = Math.random() * 100 + 'vw';
+      el.style.fontSize = (Math.random() * 10 + 10) + 'px';
+      el.style.animationDuration = (Math.random() * 5 + 8) + 's';
+      el.style.animationDelay = (Math.random() * 10) + 's';
+      container.appendChild(el);
+    }
+  })();
+</script>
+{% endif %}
+{% endif %}
